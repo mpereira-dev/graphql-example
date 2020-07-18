@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  mongodb:
+    image: mongo            # Build from standard MongoDB image
+    container_name: mongodb # Name the container
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: myDB               # Set Database Name
+      MONGO_INITDB_ROOT_USERNAME: myRootUser    # Set root username
+      MONGO_INITDB_ROOT_PASSWORD: "myPassword"  # Set root user password
+    ports:
+      - 27017:27017 # Expose the standard port for tools like MongoDB Compass / Robo3T
